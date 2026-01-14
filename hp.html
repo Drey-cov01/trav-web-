@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Putanginang Travel Website 'to</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="hp.css">
+</head>
+<body>
+    <header>
+    
+
+        <a href="#" class="logo"><span>T</span>ravel</a>
+            <nav class="navbar">
+            <ul>
+                <li><a href="Home">Home</a></li>
+                <li><a href="Book">Book</a></li>
+                <li><a href="Packages">Packages</a></li>
+                <li><a href="Services">Services</a></li>
+                <li><a href="Gallery">Gallery</a></li>
+                <li><a href="Review">Review</a></li>
+                <li><a href="Contact">Contact</a></li>
+             </ul>
+         </nav>
+
+          <div class="icons">
+              <i class="fas fa-search" id="search-btn"></i>
+             <i class="fas fa-user" id="login-btn"></i>
+           </div>
+
+          <form action="" class="search-bar-container">
+              <input type="search" id="search-bar" placeholder="Search ka rito kupal">
+              <label for="search-bar" class="fas fa-search"></label>
+          </form>
+
+    </header>
+
+    <div class="login-form-container">
+
+        <i class="fas fa-times" id="form-close"></i>
+
+        <form action="">
+            <h3>Login</h3>
+            <input type="email" class="box" placeholder="Enter mo Email mo kupal">
+            <input type="password" class="box" placeholder="Password naman boi">
+            <input type="submit" value="Login now" class="btn">
+            <input type="checkbox" id="remember">
+            <label for="remember">remember me</label>
+            <p>Forger password? <a href="#">Click mo to!</a></p>
+            <p>Don't have an account? <a href="#">Register ka rito bugok</a></p>
+        </form>
+    </div>
+
+    <section class="home" id="home">
+        
+        <div class="content">   
+            <h3>Adventure is worthwhile</h3>
+            <p>Discover new places with us, adventure awaits</p>
+            <a href="#" class="btn">Discover more</a>
+        </div>
+
+        <div class="controls">
+            <span class="vid-btn active" src="1stbg.mp4"></span>
+            <span class="vid-btn" src="2ndbg.mp4"></span>
+            <span class="vid-btn" src="3rdbg.mp4"></span>
+
+        </div>
+
+        <div class="video-container">
+            <video src="1stbg.mp4" id="video-slider" autoplay loop muted></video>
+        </div>
+    </section>
+
+    <section class="book" id="book">
+
+        <h1 class="heading">
+            <span>B</span>
+            <span>O</span>
+            <span>O</span>
+            <span>K</span>
+            <span class="space"></span>
+            <span>N</span>
+            <span>O</span>
+            <span>W</span>
+        </h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="book.png" alt="">
+            </div>
+
+            <form action="">
+                <div class="inputBox">
+                    <h3>Where to</h3>
+                    <input type="text" placeholder="place name">
+                </div>
+                <div class="inputBox">
+                    <h3>How many</h3>
+                    <input type="number" placeholder="number of guests">
+                </div>
+                <div class="inputBox">
+                    <h3>Arrivals</h3>
+                    <input type="date">
+                </div>
+                <div class="inputBox">
+                    <h3>Leaving</h3>
+                    <input type="date">
+                </div>
+                <input type="submit" class="btn" value="book now">
+            </form>
+        </div>
+
+    </section>
+
+    <section class="packages" id="packages">
+
+        <h1 class="heading">
+            <span>P</span>
+            <span>A</span>
+            <span>C</span>
+            <span>K</span>
+            <span>A</span>
+            <span>G</span>
+            <span>E</span>
+            <span>S</span>
+        </h1>
+
+    </section>
+ 
+
+   <script src="hp.js"></script>
+</body>
+</html>

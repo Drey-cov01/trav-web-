@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipping Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="attractions-container">
+        <div class="attraction-card">
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="tagaytay.png" alt="People's Park">
+                        <div class="description">
+                            <p>Located in Tagaytay, the People's Park in the Sky offers breathtaking views of Taal Volcano and Taal Lake. Visitors can stroll through the park, enjoy the cool climate, and admire panoramic vistas.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3><a href="#">People's Park in the Sky (Tagaytay)</a></h3>
+                        <h3>Highlights:</h3>
+                        <ul>
+                            <li>Scenic views of Taal Volcano and the lake</li>
+                            <li>Cool, fresh air from the higher elevation</li>
+                            <li>The old guest house structure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+        }
+    </script>
+
+</body>
+</html>

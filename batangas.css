@@ -1,0 +1,497 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, rgb(32, 58, 58), rgb(48, 42, 88), rgb(50, 71, 50), rgb(35, 63, 63));
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to right, darkslategray, darkslateblue);
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background: linear-gradient(to left, black, gray);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    transition: background 0.1s ease;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin-right: 75px;
+}
+
+.navbar .logo a {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .logo a:hover {
+    color: darkred;
+}
+
+.navbar .logo a::after {
+    display: inline;
+    margin-right: 20px;
+    content: '';
+    background: linear-gradient(to right, darkOrange, black);
+    border-radius: 100%;
+    height: 4px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 300ms ease-in-out;
+}
+
+.navbar .logo a {
+    display: inline;
+    margin-right: 20px;
+    position: relative;
+}
+
+.navbar .logo a:hover::after {
+    width: 100%;
+}
+
+
+.navbar .nav-links {
+    list-style-type: none;
+}
+
+.navbar .nav-links li {
+    display: inline;
+    margin-right: 20px;
+    position: relative;
+}
+
+.navbar .nav-links li::after {
+    display: inline;
+    margin-right: 20px;
+    content: '';
+    background: linear-gradient(to right, darkOrange, black);
+    border-radius: 100%;
+    height: 4px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 300ms ease-in-out;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+.navbar .nav-links a:hover {
+    color: darkred;
+}
+
+.navbar .nav-links li:hover::after {
+    width: 100%;
+}
+
+.intro {
+    margin: 10px;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.intro video {
+    border-radius: 20px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.intro-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.intro-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.intro-text p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background-color: #ffcc00;
+    padding: 15px 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+.cta-btn:hover {
+    background-color: #ff9900;
+}
+
+.content-section {
+    padding: 20px 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#landmarks .bg-video,
+#accommodation .bg-video,
+#reztows .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.batangas {
+    padding: 20px 20px;
+    color: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(46, 42, 42, 0.6);
+    text-align: center;
+    background: transparent;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+.content-section h2 {
+    font-size: 1.8rem;
+}
+
+.content-section h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+h3 a{
+    font-size: 20px;
+    color: black;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+h3 a:hover{
+    color: cyan;
+}
+
+.attractions-container,
+.accommodation-container,
+.food-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.image-container {
+    position: relative;
+}
+
+.description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(46, 42, 42, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-height: 97.5%;
+}
+
+.attraction-card:hover .description,
+.accommodation-card:hover .description,
+.food-card:hover .description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.attraction-card,
+.accommodation-card,
+.food-card {
+    background: transparent;
+    box-shadow: 0px 4px 6px black;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.attraction-card:hover,
+.accommodation-card:hover,
+.food-card:hover {
+    transform: translateY(-10px);
+}
+
+.attraction-card img,
+.accommodation-card img,
+.food-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.attraction-card p,
+.accommodation-card p,
+.food-card p {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.attraction-card:hover p,
+.accommodation-card:hover p,
+.food-card:hover p {
+    transform: translateX(-50%) translateY(0);
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.more-info, .inquire {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.more-info {
+    background-color: #007bff;
+    color: white;
+}
+
+.more-info:hover {
+    background-color: #0056b3;
+}
+
+.inquire {
+    background-color: #28a745;
+    color: white;
+}
+
+.inquire:hover {
+    background-color: #1e7e34;
+}
+
+/* Inquire Popup Styles */
+.inquire-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 6, 6, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.inquire-popup.show {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+}
+
+.inquire-popup-content {
+    background: linear-gradient(to bottom, rgb(32, 58, 58), rgb(48, 42, 88), rgb(50, 71, 50), rgb(35, 63, 63));
+    padding: 50px;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 100%;
+    max-height: 87vh;
+    text-align: center;
+    position: relative;
+}
+
+.inquire-popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+.inquire-popup input,
+.inquire-popup select,
+.inquire-popup textarea {
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.inquire-popup button {
+    background-color: #ffcc00;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.inquire-popup button:hover {
+    background-color: #ff9900;
+}
+
+.inquire-popup label {
+    font-size: 16px;
+    color: white;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: left;
+    display: block;
+}
+
+.inquire-popup h2 {
+    font-size: 25px;
+    color: white;
+}
+
+#traveller-count {
+    width: 60px;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 1px;
+}
+
+.form-group {
+    width: 48%;
+}
+
+
+footer {
+    background: linear-gradient(to left, black, gray);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro-text h1 {
+        font-size: 2rem;
+    }
+
+    .cta-btn {
+        font-size: 1rem;
+    }
+
+    .attractions-container,
+    .accommodation-container,
+    .food-container {
+        grid-template-columns: 1fr;
+    }
+
+    .attraction-card,
+    .accommodation-card,
+    .food-card {
+        margin: 20px 0;
+    }
+}

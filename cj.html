@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website - Laguna</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: transparent;
+            color: white;
+            overflow-x: hidden;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            padding: 10px 30px;
+        }
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background: url(Enchanted-Kingdom.jpg) no-repeat center / cover;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .content {
+            position: relative;
+            padding: 30px;
+            max-width: 1600px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .title-section {
+            margin-top: 80px;
+            text-align: center;
+        }
+        .title-section h1 {
+            font-size: 70px;
+            line-height: 1.2;
+        }
+        .title-section p {
+            margin-top: 20px;
+            max-width: 100%;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        .card-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));    
+            gap: 30px;
+            margin-top: 40px;
+            width: 100%;
+        }
+        .card {
+            perspective: 1000px;
+        }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 474px;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .card-front {
+            background-color: white;
+            color: rgb(31, 41, 55);
+        }
+        .card-front img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .card-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .card-content p {
+            font-size: 18px;
+            color: rgb(75, 85, 99);
+        }
+        .card-back {
+            background-color: rgb(37, 99, 235);
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .card-back p {
+            font-size: 18px;
+        }
+        .next-page-button {
+            display: inline-block;
+            margin: 50px auto 0;
+            padding: 15px 30px;
+            background-color: rgb(37, 99, 235);
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .next-page-button:hover {
+            background-color: #1e40af;
+            transform: translateY(-5px);
+        }
+        @media (max-width: 768px) {
+            .title-section h1 {
+                font-size: 50px;
+            }
+            .title-section p {
+                font-size: 16px;
+            }
+            .content {
+                padding: 20px;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h2>LAGUNA</h2>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="title-section">
+                <h1>LAGUNA</h1>
+                <p>Laguna, a captivating province in the Calabarzon region of the Philippines, is renowned for its breathtaking natural wonders, including rejuvenating hot springs, majestic waterfalls, and the scenic Laguna de Bay—the country's largest lake.</p>
+            </div>
+            <div class="card-section" id="destinations">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="bahay ni rizal.webp" alt="Bahay ni Rizal">
+                            <div class="card-content">
+                                <h3>Bahay ni Rizal</h3>
+                                <p>Reconstructed ancestral home of Dr. José Rizal, showcasing Spanish-Colonial architecture and memorabilia.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p>Additional details about Bahay ni Rizal can be placed here, including historical insights and visitor tips.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Enchanted-Kingdom.jpg" alt="Enchanted Kingdom">
+                            <div class="card-content">
+                                <h3>Enchanted Kingdom</h3>
+                                <p>The Philippines' first and largest theme park, known for its thrilling rides and entertainment.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p>Find out about park schedules, ticket prices, and must-try attractions for families and friends.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Pagsanjan-Falls-Laguna-scaled.webp" alt="Pagsanjan Falls">
+                            <div class="card-content">
+                                <h3>Pagsanjan Falls</h3>
+                                <p>Known for its scenic boat ride called "shooting the rapids," offering an adventurous river journey.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p>Best visiting times, safety tips, and boat ride costs are featured here for a complete travel guide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="13463181925HZ2dMoY.jpg" alt="Pagsanjan Falls">
+                            <div class="card-content">
+                                <h3>Mt.Makiling</h3>
+                                <p>Dormant volcano and popular hiking destination, famous for its biodiversity and scenic trails.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p>Best visiting times, safety tips, and boat ride costs are featured here for a complete travel guide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="cementery.jpg" alt="Pagsanjan Falls">
+                            <div class="card-content">
+                                <h3>Nagcarlan Underground Cemetery</h3>
+                                <p>A historical cemetery built during the Spanish colonial period, known for its underground crypt used by Filipino revolutionaries.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p>Best visiting times, safety tips, and boat ride costs are featured here for a complete travel guide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="1350010037mD2CevzJ.jpg" alt="Caliraya Lake">
+                            <div class="card-content">
+                                <h3>Caliraya Lake</h3>
+                                <p>Ideal for water sports like kayaking, windsurfing, and fishing, as well as camping and glamping along its shores.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p>Best visiting times, safety tips, and boat ride costs are featured here for a complete travel guide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Paete.jpg" alt="Pagsanjan Falls">
+                            <div class="card-content">
+                                <h3>Paete</h3>
+                                <p>Known as the "Carving Capital of the Philippines," Paete is famous for its intricate wood carvings, papier-mâché art, and religious sculptures.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p>Best visiting times, safety tips, and boat ride costs are featured here for a complete travel guide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Waterfalls-in-Laguna-Taytay-Falls.jpg" alt="Pagsanjan Falls">
+                            <div class="card-content">
+                                <h3>Botocan Falls (Majayjay)</h3>
+                                <p>A stunning waterfall surrounded by lush greenery, offering a refreshing escape into nature.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p>Best visiting times, safety tips, and boat ride costs are featured here for a complete travel guide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="twinfalls.jpg" alt="Pagsanjan Falls">
+                            <div class="card-content">
+                                <h3>Bunga Twin Falls (Nagcarlan)</h3>
+                                <p>Less crowded and ideal for those who love quiet nature trips.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p>Best visiting times, safety tips, and boat ride costs are featured here for a complete travel guide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">    
+                            <img src="Hulugan-Falls-1.jpg" alt="Hulugan Falls">
+                            <div class="card-content">
+                                <h3>Hulugan Falls (Luisiana)</h3>
+                                <p>One of the tallest waterfalls in Laguna, reachable through a scenic trek that also leads to nearby Talay and Hidden Falls.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p>Best visiting times, safety tips, and boat ride costs are featured here for a complete travel guide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="c822ed_3204a07e823546df8d6043a435bb3c4e~mv2.avif" alt="Pagsanjan Falls">
+                            <div class="card-content">
+                                <h3>Lake Pandin</h3>
+                                <p>Offers serene waters ideal for bamboo rafting, swimming, and enjoying traditional Filipino meals by the lake.</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p>Best visiting times, safety tips, and boat ride costs are featured here for a complete travel guide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <p class="next-page-button">Click Picture for more info!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="accommodation" class="content-section">
+        <!-- <video class="bg-video" src="b2.mp4" autoplay loop muted></video> -->
+        <h1>Where to Stay in Etivac</h1>
+        <div class="accommodation-container">
+            <div class="accommodation-card">
+                <div class="image-container">
+                    <img src="bayleaf.webp" alt="bayleaf">
+                    <p class="description">The Bayleaf Cavite offers a luxurious stay in General Trias. This hotel features comfortable rooms, a stunning rooftop restaurant, and an outdoor pool, making it perfect for an upscale experience.</p>
+                </div>
+                <h2>The Bayleaf Cavite (General Trias)</h2>
+                <h4>Price Range: ₱4,500 - ₱8,000 per night</h4>
+                <h4>Star Rating: ⭐⭐⭐⭐⭐</h4>
+                <ul>
+                    <li>General Trias Historical Park (15-minute drive)</li>
+                    <li>Cavite Eco Park (20-minute drive)</li>
+                </ul><div class="button-container">
+                    <button class="more-info">More Info</button>
+                    <button class="inquire">Inquire</button>
+                </div>
+            </div>
+            <div class="accommodation-card">
+                <div class="image-container">
+                    <img src="highlands.jpg" alt="highlands">
+                    <p class="description">Tagaytay Highlands is a luxury mountain resort offering world-class amenities like golf courses, a spa, and scenic views of Taal Volcano.</p>
+                </div>
+                <h2>Tagaytay Highlands (Tagaytay)</h2>
+                <h4>Price Range: ₱8,000 - ₱15,000 per night</h4>
+                <h4>Star Rating: ⭐⭐⭐⭐⭐</h4>
+                <ul>
+                    <li>Taal Volcano (15-minute drive)</li>
+                    <li>People’s Park in the Sky (20-minute drive)</li>
+                </ul>
+                <div class="button-container">
+                    <button class="more-info">More Info</button>
+                    <button class="inquire">Inquire</button>
+                </div>
+            </div>
+            <div class="accommodation-card">
+                <div class="image-container">
+                    <img src="anya.jpg" alt="anya">
+                    <p class="description">Anya Resort offers luxurious, 5-star service with modern villas, a spa, restaurant, and infinity pool with spectacular views.</p>
+                </div>
+                <h2>Anya Resort (Tagaytay)</h2>
+                <h4>Price Range: ₱12,000 - ₱20,000 per night</h4>
+                <h4>Star Rating: ⭐⭐⭐⭐⭐</h4>
+                <ul>
+                    <li>Taal Volcano (20-minute drive)</li>
+                    <li>People’s Park in the Sky (15-minute drive)</li>
+                </ul>
+                <div class="button-container">
+                    <button class="more-info">More Info</button>
+                    <button class="inquire">Inquire</button>
+                </div>
+            </div>
+            <div class="accommodation-card">
+                <div class="image-container">
+                    <img src="puerto.jpg" alt="puerto">
+                    <p class="description">Puerto Azul Beach and Country Club offers a relaxing stay by the beach in Ternate, Cavite. It also features a golf course.</p>
+                </div>
+                <h2>Puerto Azul Beach and Country Club (Ternate)</h2>
+                <h4>Price Range: ₱3,500 - ₱6,500 per night</h4>
+                <h4>Star Rating: ⭐⭐⭐⭐</h4>
+                <ul>
+                    <li>Mt. Pico de Loro (10-minute drive)</li>
+                    <li>Ternate Beach (direct access)</li>
+                </ul>
+                <div class="button-container">
+                    <button class="more-info">More Info</button>
+                    <button class="inquire">Inquire</button>
+                </div>
+            </div>
+            <div class="accommodation-card">
+                <div class="image-container">
+                    <img src="orchard.jpg" alt="orchard">
+                    <p class="description">The Orchard Golf & Country Club offers a relaxing atmosphere with access to sports facilities, perfect for golf enthusiasts.</p>
+                </div>
+                <h2>The Orchard Golf & Country Club (Dasmariñas)</h2>
+                <h4>Price Range: ₱4,000 - ₱8,000 per night</h4>
+                <h4>Star Rating: ⭐⭐⭐⭐</h4>
+                <ul>
+                    <li>SM Dasmariñas (15-minute drive)</li>
+                    <li>Cavite Eco Park (30-minute drive)</li>
+                </ul>
+                <div class="button-container">
+                    <button class="more-info">More Info</button>
+                    <button class="inquire">Inquire</button>
+                </div>
+            </div>
+            <div class="accommodation-card">
+                <div class="image-container">
+                    <img src="lake.jpg" alt="lake">
+                    <p class="description">A charming hotel that offers panoramic views of Taal Lake. Ideal for a romantic getaway or a relaxing retreat.</p>
+                </div>
+                <h2>The Lake Hotel (Tagaytay)</h2>
+                <h4>Price Range: ₱5,000 - ₱10,000 per night</h4>
+                <h4>Star Rating: ⭐⭐⭐⭐</h4>
+                <ul>
+                    <li>People's Park in the Sky (20-minute drive)</li>
+                    <li>Sky Ranch Tagaytay (15-minute drive)</li>
+                </ul>
+                <div class="button-container">
+                    <button class="more-info">More Info</button>
+                    <button class="inquire">Inquire</button>
+                </div>
+            </div>
+            <div class="accommodation-card">
+                <div class="image-container">
+                    <img src="tanza.png" alt="tanza">
+                    <p class="description">Tanza Oasis Hotel & Resort offers a peaceful retreat for those looking to unwind. Located in Tanza, Cavite, it features comfortable rooms, a spacious swimming pool, and a great venue for family gatherings and events.</p>
+                </div>
+                <h2>Tanza Oasis Hotel & Resort (Tanza)</h2>
+                <h4>Price Range: ₱2,500 - ₱6,000 per night</h4>
+                <h4>Star Rating: ⭐⭐⭐⭐</h4>
+                <ul>
+                    <li>Paradise Ranch (15-minute drive)</li>
+                    <li>Bacoor Bay (20-minute drive)</li>
+                </ul>
+                <div class="button-container">
+                    <button class="more-info">More Info</button>
+                    <button class="inquire">Inquire</button>
+                </div>
+            </div>    
+            <div class="accommodation-card">
+                <div class="image-container">
+                    <img src="nurture.png" alt="nurture">
+                    <p class="description">Nurture Wellness Village offers a peaceful retreat with a focus on health and wellness. The resort offers spa treatments, wellness activities, and farm-to-table meals, making it ideal for relaxation and rejuvenation.</p>
+                </div>
+                <h2>Nurture Wellness Village (Tagaytay)</h2>
+                <h4>Price Range: ₱4,000 - ₱15,000 per night</h4>
+                <h4>Star Rating: ⭐⭐⭐⭐</h4>
+                <ul>
+                    <li>Tagaytay Picnic Grove (15-minute drive)</li>
+                    <li>People's Park in the Sky (20-minute drive)</li>
+                </ul>
+                <div class="button-container">
+                    <button class="more-info">More Info</button>
+                    <button class="inquire">Inquire</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flip');
+            });
+        });
+    </script>
+
+</body>
+</html>

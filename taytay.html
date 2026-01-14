@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, rgb(32, 58, 58), rgb(48, 42, 88), rgb(50, 71, 50), rgb(35, 63, 63));
+        }
+        header {
+            background: linear-gradient(to right, darkslategray, darkslateblue);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #007BFF;
+            text-decoration: underline;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        .background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 45%;
+            min-height: 77%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%) scale(1);
+            object-fit: cover;
+            z-index: -1;
+        }
+        @keyframes zoom {
+            from { transform: translate(-50%, -50%) scale(1); }
+            to { transform: translate(-50%, -50%) scale(1.1); }
+        }
+        .hero-content {
+            width: 1250px;
+            animation: fadeIn 2s ease-in;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .services {
+            background: linear-gradient(to bottom, rgb(32, 58, 58), rgb(48, 42, 88), rgb(50, 71, 50), rgb(35, 63, 63));
+            color: white;
+            padding: 80px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .service-card {
+            background-color: #2196F3;
+            color: white;
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .about {
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 80px 20px;
+            align-items: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .about-text, .about-image {
+            flex: 1;
+            padding: 20px;
+        }
+        .about-image {
+            height: 400px;
+            border-radius: 12px;
+            background-image: url(tagaytay.png);
+            background-size: cover;
+            background-position: center;
+        }
+        .cta {
+            background-color: #1976D2;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .cta button {
+            background-color: white;
+            color: #1976D2;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+        .cta button:hover {
+            background-color: #f1f1f1;
+        }
+        footer {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .about {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="laguna.html"><h1>Taytay Falls</h1></a>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#services">Our Services</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="TAYTAY FALLS MAJAYJAY LAGUNA - e n e r (720p, h264).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1 style="font-family:sans-serif">"Escape to the Serenity of Taytay Falls"</h1>
+            <p>Experience the untouched beauty of nature at Taytay Falls, a hidden paradise in Majayjay, Laguna. Known for its icy-cold spring water, this breathtaking waterfall is the perfect getaway for adventure seekers and those looking to relax in a peaceful, nature-filled environment.</p>
+        </div>
+    </section>
+     <h1 id="services" style="margin-left: 40px; color:white">Services</h1>
+    <section class="services">
+        <div class="service-card">
+            <h3>Refreshing Waterfalls and Natural Pools</h3>
+            <p>Swim in the crystal-clear, ice-cold waters of Taytay Falls, known for its natural purity and rejuvenating feel.</p>
+        </div>
+        <div class="service-card">
+            <h3>Camping and Picnic Grounds</h3>
+            <p>Set up camp under the stars or enjoy a day picnic in designated areas, surrounded by the soothing sounds of flowing water.</p>
+        </div>
+        <div class="service-card">
+            <h3>Local Handicrafts and Food Stalls</h3>
+            <p>Taste authentic Laguna delicacies and shop for handcrafted souvenirs made by local artisans.</p>
+        </div>
+        <div class="service-card">
+            <h3>Eco-Trekking and Hiking</h3>
+            <p>Enjoy an exciting trek through lush rainforests, crossing scenic trails filled with vibrant greenery, flowing streams, and diverse wildlife.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-text">
+            <h3 style="margin-bottom: 20px;">"A Natural Wonder in Laguna"</h3>
+            <p style="margin-bottom: 20px;">Taytay Falls is a two-tiered waterfall with a steady stream of water flowing from the Mount Banahaw watershed. Its pristine natural pool offers a tranquil and cooling retreat, making it one of the most visited waterfalls in Laguna.</p>
+            <h3>Key Features and Attractions:</h3>
+            <ul>
+                <li>💦 Pristine Waterfall & Natural Pool: Taytay Falls is known for its clear, unpolluted waters, perfect for swimming and relaxing.</li>
+                <li>🌳 Dense Forest and Wildlife: The surrounding forest is home to a variety of plants and animals, making it a great spot for nature lovers and eco-tourists.</li>
+                <li>🏕️ Overnight Camping Experience: Pitch a tent and sleep under the stars while enjoying the peaceful sounds of nature.</li>
+                <li style="margin-bottom: 20px;">🚶 Easy Hiking Trail: The short 15- to 20-minute trek to the falls is beginner-friendly, making it ideal for families and casual hikers.</li>
+              </ul>
+              <h3>🌟 Things to Do at Taytay Falls:</h3>
+              <ul>
+                <li>📸 Photography & Sightseeing – Capture the stunning rock formations, lush greenery, and vibrant wildlife.</li>
+                <li>🦜 Birdwatching & Nature Walks – Spot unique birds, butterflies, and small wildlife along the trails.</li>
+                <li style="margin-bottom: 20px;">🍛 Food Trip – Enjoy Laguna’s specialties like espasol, kesong puti, and bibingka from nearby vendors.</li>
+                <li>🌙 Night Camping & Bonfire – Stay overnight and enjoy a peaceful campfire experience with friends and family.</li>
+              </ul>
+              <h3>📍 Why Visit Taytay?</h3>
+              <ul>
+                <li>✅ A hidden paradise offering a cool and refreshing retreat.
+                </li>
+                <li>✅ One of Laguna’s most accessible waterfalls, perfect for quick getaways.
+                </li>
+                <li>✅ Ideal for nature lovers, hikers, and budget travelers.</li>
+                <li style="margin-bottom: 20px;">✅ No high entrance fees—an affordable travel destination.
+                </li>
+              </ul>
+              <h3>⏰ Travel Info & Entrance Fees:</h3>
+              <ul>
+                <li>🕒 Open daily from morning until late afternoon.
+                </li>
+                <li>🕒 Open daily from morning to late afternoon.</li>
+                <li>🎟️ Minimal entrance fee (around ₱20-₱50) per person.</li>
+                <li>🚗 Accessible by car or public transport from Manila via Santa Cruz, Laguna.</li>
+                <li style="margin-bottom: 20px;">📌 Tents & cottages available for rent at affordable rates.</li>
+              <h3>🌿 Fun Fact: The water in Taytay Falls is so cold that it remains refreshing even on the hottest summer days!</h3>
+        </div>
+        <div class="about-image"></div>
+    </section>
+
+    <section id= "contact" class="cta">
+        <h4>Do You Have Any Question About Our Services?</h4>
+        <p>We provide free consultation so let's talk with us!</p>
+        <p>ceejaydomingcil2@gmail.com</p>
+        <p>+(63) 909 490 9109</p>
+        <a href="https://maps.app.goo.gl/AcU7PH1o4gxE2RrZ6"><button>Taytay Falls</button></a>
+    </section>
+</body>
+</html>

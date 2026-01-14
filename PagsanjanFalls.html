@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, rgb(32, 58, 58), rgb(48, 42, 88), rgb(50, 71, 50), rgb(35, 63, 63));
+        }
+        header {
+            background: linear-gradient(to right, darkslategray, darkslateblue);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+
+        h1{
+            color: white;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #007BFF;
+            text-decoration: underline;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        .background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 45%;
+            min-height: 77%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%) scale(1);
+            object-fit: cover;
+            z-index: -1;
+        }
+        @keyframes zoom {
+            from { transform: translate(-50%, -50%) scale(1); }
+            to { transform: translate(-50%, -50%) scale(1.1); }
+        }
+        .hero-content {
+            width: 1250px;
+            animation: fadeIn 2s ease-in;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .services {
+            background: linear-gradient(to bottom, rgb(32, 58, 58), rgb(48, 42, 88), rgb(50, 71, 50), rgb(35, 63, 63));
+            color: white;
+            padding: 80px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .service-card {
+            background-color: #2196F3;
+            color: white;
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .about {
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 80px 20px;
+            align-items: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .about-text, .about-image {
+            flex: 1;
+            padding: 20px;
+        }
+        .about-image {
+            height: 400px;
+            border-radius: 12px;
+            background-image: url(Pagsanjan-Falls-Laguna-scaled.webp);
+            background-size: cover;
+            background-position: center;
+        }
+        .cta {
+            background-color: #1976D2;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .cta button {
+            background-color: white;
+            color: #1976D2;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+        .cta button:hover {
+            background-color: #f1f1f1;
+        }
+        footer {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .about {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="laguna.html"><h1>Pagsanjan Falls</h1></a>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#services">Our Services</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="An epic one-day adventure in PAGSANJAN FALLS, Laguna, Philippines.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>"Experience the Majestic Pagsanjan Falls"</h1>
+            <p>Discover the breathtaking beauty and thrilling adventures of Laguna's iconic natural wonder.</p>
+        </div>
+    </section>
+     <h1 id="services" style="margin-left: 40px; color:white;">Services</h1>
+    <section class="services">
+        <div class="service-card">
+            <h3>Tour Guide Services</h3>
+            <p>Knowledgeable local guides providing historical insights, safety tips, and interesting facts about the falls.</p>
+        </div>
+        <div class="service-card">
+            <h3>Picnic and Rest Areas</h3>
+            <p>Designated spots for relaxing and enjoying meals while surrounded by nature.</p>
+        </div>
+        <div class="service-card">
+            <h3>Waterfall Rafting Adventure</h3>
+            <p>A bamboo raft ride that takes you directly under the falls and into the Devil's Cave.</p>
+        </div>
+        <div class="service-card">
+            <h3>Trekking and Nature Trails</h3>
+            <p>Knowledgeable local guides providing historical insights, safety tips, and interesting facts about the falls.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-text">
+            <h3 style="margin-bottom: 20px;">"Witness Nature's Grand Masterpiece"</h3>
+            <p style="margin-bottom: 20px;">Pagsanjan Falls, locally known as Magdapio Falls, is one of the most famous waterfalls in the Philippines, located in the province of Laguna. Renowned for its breathtaking beauty and thrilling boat rides, the falls attract tourists seeking adventure and a glimpse of natural wonder.</p>
+            <h3 style="margin-bottom: 5px;">🌿 Key Features and Attractions:</h3>
+            <ul>
+                <li style="margin-bottom: 5px;">Scenic Boat Ride (Shooting the Rapids): Experience an exciting canoe ride through rocky streams and lush scenery, expertly maneuvered by skilled boatmen.</li>
+                <li style="margin-bottom: 5px;">Hidden Caves: Discover the Devil's Cave behind the falls, accessible by raft, where visitors can feel the power of the cascading water.</li>
+                <li style="margin-bottom: 5px;">Swimming and Relaxation: Swim in the refreshing pool at the base of the falls or relax amidst the natural surroundings.</li>
+                <li style="margin-bottom: 20px;">Trekking Trails: For the adventurous, hiking trails leading to the falls offer panoramic views of the river and forests.</li>
+            </ul>
+            <h3 style="margin-bottom: 5px;">🎭 Activities and Entertainment:</h3>
+            <li style="margin-bottom: 5px;">🚣‍♂️ Water Adventure: Enjoy the famous rapids ride and bamboo raft experiences.</li>
+            <li style="margin-bottom: 5px;">🌿 Nature Tours: Guided eco-tours that highlight local flora, fauna, and the rich biodiversity of Laguna.🌿 Nature Tours: Guided eco-tours that highlight local flora, fauna, and the rich biodiversity of Laguna.</li>
+            <li style="margin-bottom: 20px;">📸 Photo Opportunities: Capture Instagram-worthy photos at various viewpoints along the river.</li>
+            <h3 style="margin-bottom: 5px;">🍽️ Food and Dining:</h3>
+            <p style="margin-bottom: 20px;">Local eateries near Pagsanjan offer Filipino delicacies, from fresh seafood dishes to classic snacks like halo-halo and suman. Riverside picnic spots are also available for visitors who wish to bring their own meals.</p>
+            <h3 style="margin-bottom: 5px;">🌟 Why Visit Pagsanjan Falls?</h3>
+            <li style="margin-bottom: 5px;">Perfect for adventure seekers and nature lovers.</li>
+            <li style="margin-bottom: 5px;">Offers a combination of cultural heritage, eco-tourism, and thrilling outdoor activities.
+            </li>
+            <li style="margin-bottom: 20px;">Ideal for day trips, family getaways, and educational tours.
+            </li>
+            <h3 style="margin-bottom: 5px;">🕒 Operating Hours & Fees:</h3>
+            <li style="margin-bottom: 5px;">Open daily from 8 AM to 5 PM.</li>
+            <li style="margin-bottom: 5px;">Boat rides are available with licensed guides; fees cover life vests, helmets, and environmental charges.Boat rides are available with licensed guides; fees cover life vests, helmets, and environmental charges.</li>
+            <li style="margin-bottom: 20px;">Local tour packages often include transportation, meals, and guided tours.</li>
+            <h3 style="margin-bottom: 5px;">💡 Fun Fact:</h3>
+            <h3>Pagsanjan Falls has been a popular tourist destination since the Spanish colonial period and is featured in several local films due to its stunning natural backdrop.</h3>
+        </div>
+        <div class="about-image"></div>
+    </section>
+
+    <section id= "contact" class="cta">
+        <h4>Do You Have Any Question About Our Services?</h4>
+        <p>We provide free consultation so let's talk with us!</p>
+        <p>ceejaydomingcil2@gmail.com</p>
+        <p>+(63) 909 490 9109</p>
+        <a href="https://www.getyourguide.com/pagsanjan-falls-l108237/"><button>Book now</button></a>
+        <a href="https://maps.app.goo.gl/2w4ChbDXedgHbnBt9"><button>Pagsanjan Falls</button></a>
+    </section>
+</body>
+</html>

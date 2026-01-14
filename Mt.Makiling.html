@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, rgb(32, 58, 58), rgb(48, 42, 88), rgb(50, 71, 50), rgb(35, 63, 63));
+        }
+        header {
+            background: linear-gradient(to right, darkslategray, darkslateblue);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #007BFF;
+            text-decoration: underline;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        .background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 45%;
+            min-height: 77%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%) scale(1);
+            object-fit: cover;
+            z-index: -1;
+        }
+        @keyframes zoom {
+            from { transform: translate(-50%, -50%) scale(1); }
+            to { transform: translate(-50%, -50%) scale(1.1); }
+        }
+        .hero-content {
+            width: 1250px;
+            animation: fadeIn 2s ease-in;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .services {
+            background: linear-gradient(to bottom, rgb(32, 58, 58), rgb(48, 42, 88), rgb(50, 71, 50), rgb(35, 63, 63));
+            color: white;
+            padding: 80px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .service-card {
+            background-color: #2196F3;
+            color: white;
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .about {
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 80px 20px;
+            align-items: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .about-text, .about-image {
+            flex: 1;
+            padding: 20px;
+        }
+        .about-image {
+            height: 400px;
+            border-radius: 12px;
+            background-image: url(13463181925HZ2dMoY.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .cta {
+            background-color: #1976D2;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .cta button {
+            background-color: white;
+            color: #1976D2;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+        .cta button:hover {
+            background-color: #f1f1f1;
+        }
+        footer {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .about {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="laguna.html"><h1>Mt. Makiling</h1></a>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#services">Our Services</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="Mt. Makiling Cinematic!!!.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>"Explore the Mystical Mt. Makiling"</h1>
+            <p>Uncover the beauty, legends, and rich biodiversity of Laguna's iconic mountain—perfect for nature lovers, hikers, and adventure seekers.</p>
+        </div>
+    </section>
+    <h1 id="servcies" style="margin-left: 40px; color:white;">Services</h1>
+    <section class="services">
+        <div class="service-card">
+            <h3>Guided Hiking and Trekking Tours</h3>
+            <p>Explore various trails with expert guides who share knowledge about the mountain's flora, fauna, and folklore.</p>
+        </div>
+        <div class="service-card">
+            <h3>Educational Eco-Tours</h3>
+            <p>Programs focusing on Mt. Makiling's rich biodiversity, perfect for students and researchers interested in environmental studies.</p>
+        </div>
+        <div class="service-card">
+            <h3>Birdwatching and Wildlife Observation</h3>
+            <p>Opportunities to spot endemic bird species and other wildlife in their natural habitat.</p>
+        </div>
+        <div class="service-card">
+            <h3>Camping Sites and Facilities </h3>
+            <p> Designated areas for overnight camping, complete with basic amenities for a safe and enjoyable outdoor experience.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-text">
+            <h3 style="margin-bottom: 20px;">"Unveil the Mystique of Mt. Makiling"</h3>
+            <p style="margin-bottom: 20px;">Mt. Makiling is a dormant stratovolcano located in Laguna and Batangas, Philippines. It is famous for its lush forest reserve, rich biodiversity, and cultural significance. The mountain is also shrouded in local folklore, believed to be home to Maria Makiling, a guardian spirit who protects the mountain and its surroundings.</p>
+            <h3 style="margin-bottom: 5px;">🌿 Key Features and Attractions:</h3>
+        <ul>
+            <li style="margin-bottom: 5px;">Lush Forest Trails: Multiple hiking trails, including the Makiling Trail and Sipit Trail, perfect for beginners and experienced hikers.</li>
+            <li style="margin-bottom: 5px;">Biodiversity Haven: Home to various endemic plants, birds, and wildlife, making it ideal for eco-tours and nature study.</li>
+            <li style="margin-bottom: 5px;">Mud Springs: Also known as the "sulfur springs," these hot springs are remnants of the mountain's volcanic activity.</li>
+            <li style="margin-bottom: 5px;">Mud Springs: Also known as the "sulfur springs," these hot springs are remnants of the mountain's volcanic activity.</li>
+            <li style="margin-bottom: 20px;">Viewpoints: The summit offers panoramic views of Laguna de Bay, the surrounding provinces, and even Manila on clear days.
+            </li>
+        </ul>
+            <h3 style="margin-bottom: 5px;">🎭 Activities and Entertainment:</h3>
+        <ul>
+            <li style="margin-bottom: 5px;">🥾 Hiking and Trekking: Popular among hikers for day trips and overnight camping.</li>
+            <li style="margin-bottom: 5px;">🌳 Birdwatching and Nature Walks: Guided tours available for birdwatchers and nature enthusiasts.
+            </li>
+            <li style="margin-bottom: 5px;">🎓 Educational Tours: The mountain is part of the Makiling Forest Reserve, managed by the University of the Philippines Los Baños (UPLB) for research and conservation.
+            </li>
+            <li style="margin-bottom: 20px;">📸 Photography: Capture scenic views, flora, fauna, and the mystical atmosphere of the forest.
+            </li>
+        </ul>
+            <h3 style="margin-bottom: 5px;">🍽️ Food and Dining:</h3>
+            <p style="margin-bottom: 20px;">Nearby towns like Los Baños offer local delicacies such as buko pie, espasol, and pansit habhab. There are also local eateries where visitors can enjoy Filipino dishes after a long hike.
+            </p>
+            <h3 style="margin-bottom: 5px;">🌟 Why Visit Mt. Makiling?</h3>
+        <ul>
+            <li style="margin-bottom: 5px;">Ideal for outdoor activities like hiking, camping, and birdwatching.</li>
+            <li style="margin-bottom: 5px;">Offers a peaceful retreat with its serene atmosphere and rich greenery.
+            </li>
+            <li style="margin-bottom: 5px;">Perfect for eco-tourism, educational trips, and cultural exploration.
+            </li>
+            <li style="margin-bottom: 20px;">The mountain is steeped in Philippine mythology, adding a touch of mystique to the hiking experience.
+            </li>
+        </ul>
+            <h3 style="margin-bottom: 5px;">🕒 Operating Hours & Fees:</h3>
+            <ul>
+                <li style="margin-bottom: 5px;">Open daily from 8 AM to 5 PM (hiking may be suspended during bad weather for safety reasons).
+                </li>
+                <li style="margin-bottom: 5px;">Minimal entrance fees collected by UPLB for maintenance and conservation efforts.
+                </li>
+                <li style="margin-bottom: 20px;">Local guides are available for a safer and more informative hiking experience.
+                </li>
+            </ul>
+            <h3 style="margin-bottom: 5px;">💡 Fun Fact:</h3>
+            <h3>According to local folklore, Maria Makiling is said to appear during times of need, helping lost travelers find their way home or providing food to those who are hungry.</h3>
+        </div>
+        <div class="about-image"></div>
+    </section>
+
+    <section id= "contact" class="cta">
+        <h4>Do You Have Any Question About Our Services?</h4>
+        <p>We provide free consultation so let's talk with us!</p>
+        <p>ceejaydomingcil2@gmail.com</p>
+        <p>+(63) 909 490 9109</p>
+        <a href="https://maps.app.goo.gl/Qzko8VJDXRygWpc98"><button>Mt.Makiling</button></a>
+    </section>
+
+    <footer>
+        Mt. Makiling
+    </footer>
+</body>
+</html>

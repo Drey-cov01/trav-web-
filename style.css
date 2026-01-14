@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, darkslategray, darkslateblue, aquamarine, darkslategray);
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to left, darkslategray, aquamarine);
+    z-index: 1000;
+    padding: 15px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.attractions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Super Smooth Hover on Cards */
+.attraction-card {
+    background: transparent;
+    box-shadow: 0px 4px 6px black;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.attraction-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* The Ultimate 3D Flip Card */
+.card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Perfect Image Hover Without Jitter */
+.card-front {
+    background-color: lightblue;
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Soft Hover Effect Without Jumping */
+.card-front:hover {
+    transform: scale(1.03);
+}
+
+/* The Ultimate Description Hover Effect */
+.card-front .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(46, 42, 42, 0.85);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Flawless Fade-In Description */
+.card-front:hover .description {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Smoothest Flip Effect Ever */
+.card-back {
+    background-color: lightcoral;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Text Stays Perfect */
+.card-back h3,
+.card-back ul {
+    color: white;
+    margin: 10px 0;
+}
+
+/* Responsive Perfection */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro-text h1 {
+        font-size: 2rem;
+    }
+
+    .cta-btn {
+        font-size: 1rem;
+    }
+
+    .attractions-container {
+        grid-template-columns: 1fr;
+    }
+
+    .attraction-card {
+        margin: 20px 0;
+    }
+
+    .card {
+        width: 150px;
+        height: 225px;
+    }
+}

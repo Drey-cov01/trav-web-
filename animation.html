@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+    <div class="attractions-container">
+        <div class="attraction-card">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                    <div class="image-container">
+                        <img src="aguinaldo.png" alt="Aguinaldo Shrine">
+                        <div class="card-content">
+                            <h3><a href="#">Aguinaldo Shrine (Kawit)</a></h3>
+                            <p class="description">The Aguinaldo Shrine is one of the most historically significant sites in Cavite. It was here that Emilio Aguinaldo, the first president of the Philippines, declared the country's independence from Spanish rule on June 12, 1898.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <p>PUTANGINANG PROJECT TO!</p>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flip');
+            });
+        });
+    </script>
+</body>
+</html>
+
+    

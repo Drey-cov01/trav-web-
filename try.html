@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #007BFF;
+            text-decoration: underline;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        .background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 45%;
+            min-height: 77%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%) scale(1);
+            object-fit: cover;
+            z-index: -1;
+        }
+        @keyframes zoom {
+            from { transform: translate(-50%, -50%) scale(1); }
+            to { transform: translate(-50%, -50%) scale(1.1); }
+        }
+        .hero-content {
+            width: 1250px;
+            animation: fadeIn 2s ease-in;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .services {
+            background-color: #f9f9f9;
+            padding: 80px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .service-card {
+            background-color: #2196F3;
+            color: white;
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 80px 20px;
+            align-items: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .about-text, .about-image {
+            flex: 1;
+            padding: 20px;
+        }
+        .about-image {
+            height: 400px;
+            border-radius: 12px;
+            background-image: url(Enchanted-Kingdom.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .cta {
+            background-color: #1976D2;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .cta button {
+            background-color: white;
+            color: #1976D2;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+        .cta button:hover {
+            background-color: #f1f1f1;
+        }
+        footer {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .about {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Enchanted Kingdom</h1>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#services">Our Services</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="Enchanted Kingdom Short Montage.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>"Experience the Magic of Enchanted Kingdom"</h1>
+            <p>Discover thrilling rides, captivating shows, and unforgettable adventures in the Philippines' premier theme park.</p>
+        </div>
+    </section>
+     <h1 id="services" style="margin-left: 40px;">Services</h1>
+    <section class="services">
+        <div class="service-card">
+            <h3>Rides and Attractions </h3>
+            <p>A wide variety of rides for all ages, including roller coasters, water rides, and family-friendly attractions like the Grand Carousel and Rio Grande Rapids.</p>
+        </div>
+        <div class="service-card">
+            <h3>Entertainment Shows</h3>
+            <p>Live performances, parades, and seasonal shows featuring local artists, dancers, and mascots like Eldar the Wizard.</p>
+        </div>
+        <div class="service-card">
+            <h3>Souvenir and Gift Shops</h3>
+            <p> Stores where guests can purchase themed merchandise, toys, clothing, and memorabilia to remember their visit.</p>
+        </div>
+        <div class="service-card">
+            <h3>Event and Party Packages</h3>
+            <p>Customized packages for birthdays, corporate events, school trips, and other special occasions, complete with catering and entertainment options.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-text">
+            <h3 style="margin-bottom: 20px;">"Creating Magical Memories"</h3>
+            <p style="margin-bottom: 20px;">Enchanted Kingdom (EK) is the Philippines' first and most popular world-class theme park, located in Santa Rosa, Laguna. It officially opened on October 19, 1995, and is known for providing magical experiences through rides, attractions, and entertainment for all ages.</p>
+            <h3 style="margin-bottom: 5px;">Key Features and Attractions:</h3>
+            <ul>
+                <li style="margin-bottom: 5px;">Themed Zones: The park is divided into seven themed zones, each offering unique experiences:</li>
+                <li style="margin-bottom: 5px;">🌟 Victoria Park: Inspired by the Victorian era, where the park's iconic mascot, Eldar the Wizard, welcomes guests.</li>
+                <li style="margin-bottom: 5px;">🎢 Portabello: Features pirate-themed attractions, including the Rio Grande Rapids.</li>
+                <li style="margin-bottom: 5px;">🌊 Boulderville: A dinosaur-themed area designed for young children.</li>
+                <li style="margin-bottom: 5px;">🏜️ Midway Boardwalk: Inspired by 1930s Coney Island, featuring the famous Wheel of Fate (ferris wheel) and game booths.</li>
+                <li style="margin-bottom: 5px;">🛤️ Brooklyn Place: A 1940s New York-themed area that includes the EKstreme Tower Ride and Broadway-style shows.</li>
+                <li style="margin-bottom: 5px;">🌿 Spaceport: Home to the Space Shuttle, a thrilling roller coaster with loops and twists.</li>
+                <li style="margin-bottom: 20px;">🏯 Jungle Outpost: Offers jungle-themed rides and attractions like the Jungle Log Jam.</li>
+              </ul>
+              <h3 style="margin-bottom: 5px;">🎭 Events and Entertainment:</h3>
+              <ul>
+                <li style="margin-bottom: 5px;">Fireworks Display: Every weekend and special occasions, EK hosts a fireworks show.</li>
+                <li style="margin-bottom: 5px;">Live Performances: Dance shows, concerts, and character meet-and-greets happen regularly.</li>
+                <li style="margin-bottom: 20px;">Seasonal Events: EK celebrates Halloween, Christmas, and summer festivals with themed activities and parades.</li>
+              </ul>
+              <h3 style="margin-bottom: 5px;">🍽️ Food and Dining:🍽️ Food and Dining:</h3>
+              <p style="margin-bottom: 20px;">EK has a variety of dining options, from Filipino favorites to international cuisine, plus food stalls for quick snacks like cotton candy, popcorn, and ice cream.</p>
+              <h3 style="margin-bottom: 5px;">🏆 Why Visit Enchanted Kingdom?</h3>
+              <ul>
+                <li style="margin-bottom: 5px;">Fun for all ages, from kiddie rides to extreme thrill rides.</li>
+                <li style="margin-bottom: 5px;">Perfect for family trips, barkada (friend group) outings, and school field trips.</li>
+                <li style="margin-bottom: 5px;">Promotes local tourism with world-class facilities and Filipino hospitality.</li>
+                <li style="margin-bottom: 20px;">Educational programs available for schools and organizations.</li>
+              </ul>
+              <h3 style="margin-bottom: 5px;">🕘 Operating Hours & Tickets:</h3>
+              <ul>
+                <li style="margin-bottom: 5px;">Typically open Friday to Sunday, with extended days during holidays and peak seasons.</li>
+                <li style="margin-bottom: 5px;">Tickets are available for regular day passes, ride-all-you-can passes, and group discounts.</li>
+                <li style="margin-bottom: 20px;">Special promos are often available through their website or official partners.</li>
+              </ul>
+              <h3> ✨ Fun Fact: The park's mascot, Eldar the Wizard, symbolizes wisdom and the power of knowledge, promoting family values and lifelong learning.</h3>
+        </div>
+        <div class="about-image"></div>
+    </section>
+
+    <section id= "contact" class="cta">
+        <h4>Do You Have Any Question About Our Services?</h4>
+        <p>We provide free consultation so let's talk with us!</p>
+        <p>ceejaydomingcil2@gmail.com</p>
+        <p>+(63) 909 490 9109</p>
+        <a href="https://www.enchantedkingdom.ph/ticket-rates/"><button>Book now</button></a>
+        <a href="https://maps.app.goo.gl/mNbUCb39L8WhSML67"><button>Click this for Location!</button></a>
+    </section>
+
+    <footer>
+        Enchanted Kingdom
+    </footer>
+</body>
+</html>
+EmchantedKingdom.html   

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, rgb(32, 58, 58), rgb(48, 42, 88), rgb(50, 71, 50), rgb(35, 63, 63));
+        }
+        header {
+            background: linear-gradient(to right, darkslategray, darkslateblue);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #007BFF;
+            text-decoration: underline;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        .background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 45%;
+            min-height: 77%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%) scale(1);
+            object-fit: cover;
+            z-index: -1;
+        }
+        @keyframes zoom {
+            from { transform: translate(-50%, -50%) scale(1); }
+            to { transform: translate(-50%, -50%) scale(1.1); }
+        }
+        .hero-content {
+            width: 1250px;
+            animation: fadeIn 2s ease-in;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .services {
+            background: linear-gradient(to bottom, rgb(32, 58, 58), rgb(48, 42, 88), rgb(50, 71, 50), rgb(35, 63, 63));
+            color: white;
+            padding: 80px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .service-card {
+            background-color: #2196F3;
+            color: white;
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .about {
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 80px 20px;
+            align-items: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .about-text, .about-image {
+            flex: 1;
+            padding: 20px;
+        }
+        .about-image {
+            height: 400px;
+            border-radius: 12px;
+            background-image: url(pandin.avif);
+            background-size: cover;
+            background-position: center;
+        }
+        .cta {
+            background-color: #1976D2;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+        .cta button {
+            background-color: white;
+            color: #1976D2;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+        .cta button:hover {
+            background-color: #f1f1f1;
+        }
+        footer {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .about {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="laguna.html"><h1>Lake Pandin</h1></a>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#services">Our Services</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="Pandin Lake + Yambao Lake  _  Aerial view  _ Laguna, Philippines.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>"Escape to the Serenity of Lake Pandin"</h1>
+            <p>Discover the tranquil beauty of Lake Pandin, where crystal-clear waters meet lush greenery. Experience peaceful raft rides, savor local delicacies, and immerse yourself in nature’s calm—an unforgettable retreat for relaxation and adventure in San Pablo, Laguna.
+
+            </p>
+        </div>
+    </section>
+    <h1 id="services" style="margin-left: 40px; color:white">Services</h1>
+    <section id="services" class="services">
+        <div class="service-card">
+            <h3>Bamboo Rafting Tours</h3>
+            <p>Guided raft rides across the serene lake, allowing visitors to enjoy the scenic views and peaceful atmosphere.</p>
+        </div>
+        <div class="service-card">
+            <h3>Swimming and Relaxation</h3>
+            <p>Designated areas for swimming in the clean, freshwater lake, perfect for a refreshing dip.</p>
+        </div>
+        <div class="service-card">
+            <h3>Cultural and Eco-Tourism Experiences</h3>
+            <p>Interactions with local communities who share insights on sustainable tourism, local traditions, and the preservation of the lake.</p>
+        </div>
+        <div class="service-card">
+            <h3>Local Cuisine Dining</h3>
+            <p>Freshly prepared meals served on the raft, featuring local delicacies like grilled tilapia, shrimp, and pako (fern) salad.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-text">
+            <h3 style="margin-bottom: 20px;">"A Tranquil Escape to Nature's Beauty"</h3>
+            <p style="margin-bottom: 20px;">Immerse yourself in the serene waters of Lake Pandin, a hidden gem in San Pablo, Laguna. Glide across the peaceful lake on a bamboo raft, savor delicious local dishes, and take in the lush scenery that surrounds you. Whether you’re swimming, trekking, or simply relaxing, Lake Pandin offers a perfect retreat where nature’s calm and beauty create unforgettable moments for all.
+            </p>
+            <h3 style="margin-bottom: 5px;">🌿 Key Features of Lake Pandin:</h3>
+            <ul>
+                <li style="margin-bottom: 5px;">Twin Lakes: Lake Pandin is often paired with Lake Yambo, which is separated by a narrow strip of land. Visitors can hike to Lake Yambo for panoramic views.</li>
+                <li style="margin-bottom: 5px;">Freshwater Crater Lake: It is a freshwater lake formed by volcanic activity, offering serene views and a peaceful atmosphere.</li>
+                <li style="margin-bottom: 20px;">Depth and Size: The lake has a depth of about 63 meters and covers an area of 20.5 hectares.</li>
+            </ul>
+            <h3 style="margin-bottom: 5px;">🚣 Activities to Enjoy at Lake Pandin:</h3>
+            <ul>
+                <li style="margin-bottom: 5px;">Balsa Rafting: Ride a bamboo raft (balsa) across the lake while enjoying local food and the scenic view.</li>
+                <li style="margin-bottom: 5px;">Swimming: The clean and calm waters make it a great spot for swimming.</li>
+                <li style="margin-bottom: 5px;">Picnic Lunches: Locals prepare delicious meals like inaing tilapia, pako (fern) salad, and fresh buko (coconut) juice, which you can enjoy while rafting.</li>
+                <li style="margin-bottom: 5px;">Nature Trekking: Short hikes around the area lead to Lake Yambo or nearby viewpoints.</li>
+                <li style="margin-bottom: 20px;">Photography: The lake’s mirror-like water and rich greenery make it a perfect spot for photos.</li>
+            </ul>
+            <h3 style="margin-bottom: 5px;">🌞 Why Visit Lake Pandin?</h3>
+            <ul>
+                <li style="margin-bottom: 5px;">Eco-Tourism Destination: Managed by a local women’s cooperative, ensuring sustainable tourism practices.</li>
+                <li style="margin-bottom: 5px;">Peaceful Escape: Ideal for those seeking a relaxing day trip from Manila (about a 2-hour drive).</li>
+                <li style="margin-bottom: 20px;">Cultural Experience: Interact with locals who share stories about the lake’s history and legends.
+                </li>
+            </ul>
+            <h3 style="margin-bottom: 5px;">🏞️ Tips for Visiting:</h3>
+            <ul>
+                <li style="margin-bottom: 5px;">How to Get There: From Manila, drive or take a bus to San Pablo City, Laguna. From there, tricycles can take you to the jump-off point.</li>
+                <li style="margin-bottom: 5px;">Best Time to Visit: During the dry season (November to May) for clearer skies and calmer waters.</li>
+                <li style="margin-bottom: 5px;">What to Bring: Comfortable clothes, swimwear, sun protection, and eco-friendly items (avoid single-use plastics).</li>
+                <li style="margin-bottom: 20px;">Reservation: It’s recommended to book in advance, especially for balsa rides and meals.
+                </li>
+                <h3>✨ Interesting Fact:</h3>
+                <h3>Lake Pandin is believed to be enchanted, with local legends telling stories of a mysterious lady guarding the lake.</h3>
+            </ul>
+        </div>
+        <div class="about-image"></div>
+    </section>
+
+    <section id= "contact" class="cta">
+        <h4>Do You Have Any Question About Our Services?</h4>
+        <p>We provide free consultation so let's talk with us!</p>
+        <p>ceejaydomingcil2@gmail.com</p>
+        <p>+(63) 909 490 9109</p>
+        <a href="https://maps.app.goo.gl/XJjZvCXtnHS8bVtM8"><button>Lake Pandin</button></a>
+    </section>
+</body>
+</html>
